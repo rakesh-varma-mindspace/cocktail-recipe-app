@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <% if (name) { %>
+            <h1><%= name %></h1>
+            <img src="<%= image %>" alt="<%= name %>">
+            <h2>Ingredients</h2>
+            <ul>
+                <% ingredients.forEach(ingredient => { %>
+                    <li><%= ingredient %></li>
+                <% }); %>
+            </ul>
+            <h2>Instructions</h2>
+            <p><%= instructions %></p>
+        <% } else if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+    </div>
+</body>
+</html>
